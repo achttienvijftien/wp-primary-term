@@ -1,0 +1,56 @@
+{
+    "name": "achttienvijftien/wp-primary-term",
+    "description": "Primary term selector for WP taxonomies",
+    "type": "wordpress-plugin",
+    "keywords": [
+        "wordpress",
+        "plugin",
+        "taxonomy",
+        "primary-term"
+    ],
+    "homepage": "https://www.1815.nl",
+    "require": {
+        "php": "^8.3"
+    },
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "1815",
+            "email": "it@1815.nl",
+            "role": "Project Owner"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require-dev": {
+        "achttienvijftien/building-techniques": "dev-main",
+        "php-stubs/wordpress-stubs": "dev-master",
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.2",
+        "phpcompatibility/phpcompatibility-wp": "dev-master",
+        "phpunit/phpunit": "^9.6",
+        "yoast/phpunit-polyfills": "^2.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        },
+        "platform": {
+            "php": "8.3"
+        }
+    },
+    "scripts": {
+        "format": "phpcbf --report-summary --report-source",
+        "lint": "phpcs",
+        "test": "phpunit"
+    },
+    "autoload": {
+        "psr-4": {
+            "AchttienVijftien\\Plugin\\WPPrimaryTerm\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AchttienVijftien\\Plugin\\WPPrimaryTerm\\Tests\\": "tests/php/"
+        }
+    }
+}

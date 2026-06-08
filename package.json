@@ -1,0 +1,31 @@
+{
+  "name": "@1815/wp-primary-term",
+  "version": "1.0.0",
+  "description": "Primary term selector for WP taxonomies",
+  "main": "assets/js/wp-primary-term.js",
+  "repository": "git@bitbucket.org:1815/wp-primary-term.git",
+  "author": "1815 <it@1815.nl>",
+  "license": "proprietary",
+  "private": true,
+  "scripts": {
+    "build": "wp-scripts build assets/js/wp-primary-term.js",
+    "start": "wp-scripts start assets/js/wp-primary-term.js",
+    "format:php": "composer run-script format",
+    "lint:php": "composer run-script lint",
+    "format:js": "wp-scripts format ./assets",
+    "lint:js": "wp-scripts lint-js ./assets",
+    "test": "yarn test:php",
+    "test:php": "wp-env run tests-cli --env-cwd=wp-content/plugins/wp-primary-term php ./vendor/bin/phpunit"
+  },
+  "devDependencies": {
+    "@wordpress/components": "^32.1.0",
+    "@wordpress/core-data": "^7.39.0",
+    "@wordpress/data": "^10.39.0",
+    "@wordpress/element": "^6.39.0",
+    "@wordpress/env": "^10.39.0",
+    "@wordpress/hooks": "^4.39.0",
+    "@wordpress/i18n": "^6.13.0",
+    "@wordpress/scripts": "^31.4.0"
+  },
+  "dependencies": {}
+}

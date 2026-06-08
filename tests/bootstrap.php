@@ -1,0 +1,29 @@
+<?php
+/**
+ * PHPUnit bootstrap file for the WP Primary term integration test suite.
+ *
+ * @package AchttienVijftien\Plugin\WPPrimaryTerm
+ * @author  1815 - Dario Bunschoten <dario@1815.nl>
+ */
+
+use Composer\Autoload\ClassLoader;
+
+/** @var ClassLoader $loader */
+$loader = require dirname( __DIR__ ) . '/vendor/autoload.php';
+// Get WP tests dir.
+$_tests_dir = getenv( 'WP_TESTS_DIR' ) ?: getenv( 'WP_PHPUNIT__DIR' );
+
+// Give access to tests_add_filter() function.
+require_once $_tests_dir . '/includes/functions.php';
+
+/**
+ * Manually load the plugin being tested.
+ */
+function _manually_load_plugin() {
+	require dirname( __DIR__ ) . '/wp-primary-term.php';
+}
+
+tests_add_filter( 'muplugins_loaded', '_manually_load_plugin' );
+
+// Start up the WP testing environment.
+require $_tests_dir . '/includes/bootstrap.php';
