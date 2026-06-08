@@ -18,12 +18,12 @@ yarn
 
 ## Lint
 
-
 ```
 yarn lint:js && yarn lint:php
 ```
 
 Format code:
+
 ```
 yarn format:js && yarn format:php
 ```

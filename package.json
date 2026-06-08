@@ -1,5 +1,5 @@
 {
-  "name": "@1815/wp-primary-term",
+  "name": "@achttienvijftien/wp-primary-term",
   "version": "1.0.0",
   "description": "Primary term selector for WP taxonomies",
   "main": "assets/js/wp-primary-term.js",
