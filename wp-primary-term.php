@@ -3,7 +3,7 @@
  * Plugin Name: WP Primary term
  * Plugin URI: https://www.1815.nl
  * Description: Primary term selector for WordPress taxonomies.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: 1815
  * Author URI: https://www.1815.nl
  * Text Domain: wp-primary-term

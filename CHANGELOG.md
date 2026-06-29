@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-06-29
+
 ### Fixed
 
 - Fix bug where large amounts of selected terms would not be displayed
@@ -30,6 +32,8 @@ The initial version of this plugin consists of:
   `achttienvijftien_primary_term_use_fallback` filter
 - `achttienvijftien_primary_term` filter on the resolved primary term object
 
-[unreleased]: https://github.com/achttienvijftien/wp-primary-term/compare/1.0.0...main
+[unreleased]: https://github.com/achttienvijftien/wp-primary-term/compare/1.0.1...main
+
+[1.0.1]: https://github.com/achttienvijftien/wp-primary-term/compare/1.0.0...1.0.1
 
 [1.0.0]: https://github.com/achttienvijftien/wp-primary-term/releases/tag/1.0.0

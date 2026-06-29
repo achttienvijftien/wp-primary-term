@@ -1,6 +1,6 @@
 {
   "name": "@achttienvijftien/wp-primary-term",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Primary term selector for WP taxonomies",
   "main": "assets/js/wp-primary-term.js",
   "repository": "git@bitbucket.org:1815/wp-primary-term.git",
