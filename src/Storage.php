@@ -155,6 +155,36 @@ class Storage {
 	}
 
 	/**
+	 * Get the stored primary term ID for a post and taxonomy without fallback.
+	 *
+	 * @param string $taxonomy Taxonomy slug.
+	 * @param int    $post_id  Post ID.
+	 *
+	 * @return int
+	 */
+	public function get_stored_primary_term_id( string $taxonomy, int $post_id ): int {
+		if ( empty( $taxonomy ) || ! $post_id ) {
+			return 0;
+		}
+
+		return absint(
+			get_post_meta( $post_id, self::get_primary_term_meta_key( $taxonomy ), true )
+		);
+	}
+
+	/**
+	 * Delete the stored primary term for a post and taxonomy.
+	 *
+	 * @param string $taxonomy Taxonomy slug.
+	 * @param int    $post_id  Post ID.
+	 *
+	 * @return bool
+	 */
+	public function delete_primary_term( string $taxonomy, int $post_id ): bool {
+		return delete_post_meta( $post_id, self::get_primary_term_meta_key( $taxonomy ) );
+	}
+
+	/**
 	 * Get primary term object for the given post and taxonomy.
 	 *
 	 * @param string $taxonomy Taxonomy slug.

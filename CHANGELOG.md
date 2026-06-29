@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Fix bug where large amounts of selected terms would not be displayed
+- Clear primary term after all terms were deselected or terms were updated without including the current primary term
+
 ## [1.0.0] - 2026-06-08
 
 The initial version of this plugin consists of:

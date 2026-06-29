@@ -35,6 +35,13 @@ class Bootstrap {
 	private Storage $storage;
 
 	/**
+	 * Admin handler instance.
+	 *
+	 * @var Admin
+	 */
+	private Admin $admin;
+
+	/**
 	 * Constructor.
 	 */
 	private function __construct() {
@@ -55,8 +62,10 @@ class Bootstrap {
 		// Instantiate and register hooks.
 		$this->asset   = new Asset( $taxonomies );
 		$this->storage = new Storage( $taxonomies );
+		$this->admin   = new Admin( $taxonomies, $this->storage );
 
 		$this->asset->register_hooks();
+		$this->admin->register_hooks();
 	}
 
 	/**

@@ -62,15 +62,30 @@ const withPrimaryTermField = ( OriginalComponent ) => {
 
 		const termDetails = useSelect(
 			( select ) => {
-				return selectedTerms
-					.map( ( termId ) => {
-						return select( 'core' ).getEntityRecord(
-							'taxonomy',
-							taxonomySlug,
-							termId
-						);
-					} )
-					.filter( Boolean );
+				if ( ! selectedTerms.length ) {
+					return [];
+				}
+
+				const { getEntityRecords } = select( 'core' );
+
+				const terms = [];
+				for ( let i = 0; i < selectedTerms.length; i += 100 ) {
+					const include = selectedTerms.slice( i, i + 100 );
+					const records = getEntityRecords(
+						'taxonomy',
+						taxonomySlug,
+						{
+							include,
+							per_page: include.length,
+						}
+					);
+
+					if ( records ) {
+						terms.push( ...records );
+					}
+				}
+
+				return terms;
 			},
 			[ selectedTerms, taxonomySlug ]
 		);
